@@ -14,6 +14,7 @@
             text-align: center; 
             padding-bottom: 50px;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* АНИМАЦИЯ ЗЛАТЕН ПРАХ */
@@ -60,44 +61,29 @@
         }
         .btn-gold:hover { background: var(--gold); color: black; box-shadow: 0 0 15px var(--gold); }
 
-        /* СЕКЦИЯ ПАРТНЬОРИ */
+        /* ИЗЧИСТЕНА ГРАФА ПАРТНЬОРИ */
         .partners-section {
-            margin: 60px auto;
+            margin: 80px auto;
             max-width: 900px;
-            padding: 20px;
+            padding: 40px 20px;
         }
         .partners-title {
             color: var(--gold);
             text-transform: uppercase;
             font-size: 1.2rem;
             letter-spacing: 4px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-bottom: 20px;
+            opacity: 0.6;
         }
-        .partners-title::before, .partners-title::after {
-            content: ""; height: 1px; width: 50px; background: var(--gold); margin: 0 15px; opacity: 0.5;
-        }
-        .partners-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            opacity: 0.7;
-        }
-        .partner-logo {
-            font-size: 1.1rem;
-            color: white;
-            font-weight: 300;
-            letter-spacing: 2px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 10px 20px;
-            border-radius: 5px;
+        .partners-line {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            width: 80%;
+            margin: 0 auto;
+            opacity: 0.3;
         }
 
-        .video-card-clean { background: var(--glass); padding: 10px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 25px auto; max-width: 800px; width: 90%; }
+        .video-card-clean { background: var(--glass); padding: 10px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.1); margin: 25px auto; max-width: 800px; width: 90%; }
         video { width: 100%; border-radius: 15px; background: #000; display: block; }
         
         .footer { margin-top: 50px; color: var(--gold); font-size: 0.7rem; opacity: 0.5; letter-spacing: 2px; }
@@ -109,6 +95,7 @@
     <div class="sub-title">Dramatic Tenor</div>
     
     <img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png" alt="Gold Statue" class="animated-statue">
+
     <img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png" alt="Limo" class="main-photo">
 
     <div class="nav-container">
@@ -117,6 +104,7 @@
         <a href="#" class="btn-gold">Performances</a>
         <a href="#" class="btn-gold">News</a>
         <a href="#" class="btn-gold">About</a>
+        <a href="#partners" class="btn-gold">Партньори</a>
         <a href="#" class="btn-gold">Contacts</a>
     </div>
 
@@ -136,13 +124,9 @@
         </video>
     </div>
 
-    <div class="partners-section">
+    <div class="partners-section" id="partners">
         <div class="partners-title">Партньори</div>
-        <div class="partners-grid">
-            <div class="partner-logo">ОПЕРА СТАРА ЗАГОРА</div>
-            <div class="partner-logo">ФЕСТИВАЛ МЪГЛИЖ</div>
-            <div class="partner-logo">MUSIC WORLD</div>
-            </div>
+        <div class="partners-line"></div>
     </div>
 
     <div class="footer">PROFESSIONAL PORTFOLIO &copy; 2026</div>
