@@ -17,7 +17,6 @@
             scroll-behavior: smooth;
         }
 
-        /* АНИМАЦИЯ ЗЛАТЕН ПРАХ */
         .hero-name { 
             font-size: 3rem; 
             text-transform: uppercase; 
@@ -62,28 +61,11 @@
         .btn-gold:hover { background: var(--gold); color: black; box-shadow: 0 0 15px var(--gold); }
 
         .video-card-clean { background: var(--glass); padding: 10px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.1); margin: 25px auto; max-width: 800px; width: 90%; }
-        video { width: 100%; border-radius: 15px; background: #000; display: block; }
+        video { width: 100%; border-radius: 15px; background: #000; display: block; outline: none; }
 
-        .partners-section {
-            margin: 80px auto;
-            max-width: 900px;
-            padding: 40px 20px;
-        }
-        .partners-title {
-            color: var(--gold);
-            text-transform: uppercase;
-            font-size: 1.2rem;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-            opacity: 0.6;
-        }
-        .partners-line {
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-            width: 80%;
-            margin: 0 auto;
-            opacity: 0.3;
-        }
+        .partners-section { margin: 80px auto; max-width: 900px; padding: 40px 20px; }
+        .partners-title { color: var(--gold); text-transform: uppercase; font-size: 1.2rem; letter-spacing: 4px; margin-bottom: 20px; opacity: 0.6; }
+        .partners-line { height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); width: 80%; margin: 0 auto; opacity: 0.3; }
 
         .footer { margin-top: 50px; color: var(--gold); font-size: 0.7rem; opacity: 0.5; letter-spacing: 2px; }
     </style>
@@ -94,7 +76,6 @@
     <div class="sub-title">Dramatic Tenor</div>
     
     <img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png" alt="Gold Statue" class="animated-statue">
-
     <img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png" alt="Limo" class="main-photo">
 
     <div class="nav-container">
@@ -108,10 +89,32 @@
     </div>
 
     <div class="video-card-clean">
-        <video controls>
+        <video controls playsinline preload="metadata">
             <source src="FDownloader.Net_AQN_GbNG7R93pf46vNMLzZbz8tTQwWl9o8xbG0QFnJorZ_RF36xP8cY4gzMF90psmFfVvYeRb-S2PWPJtDxDLkMx6bZAIndfy5uvJd0YNw_360p_(SD).mp4" type="video/mp4">
+            Вашият браузър не поддържа видео.
         </video>
     </div>
+
     <div class="video-card-clean">
-        <video controls>
-            <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqb
+        <video controls playsinline preload="metadata">
+            <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w%20(1).mp4" type="video/mp4">
+            Вашият браузър не поддържа видео.
+        </video>
+    </div>
+
+    <div class="video-card-clean">
+        <video controls playsinline preload="metadata">
+            <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w.mp4" type="video/mp4">
+            Вашият браузър не поддържа видео.
+        </video>
+    </div>
+
+    <div class="partners-section" id="partners">
+        <div class="partners-title">Партньори</div>
+        <div class="partners-line"></div>
+    </div>
+
+    <div class="footer">PROFESSIONAL PORTFOLIO &copy; 2026</div>
+
+</body>
+</html>
