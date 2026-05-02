@@ -5,56 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROSEN ANTONOV</title>
     <style>
-        body { background: #0a0a0a; color: white; font-family: sans-serif; text-align: center; margin: 0; padding-bottom: 50px; }
-        .gold { color: #d4af37; }
-        .lang-switch { margin: 20px; display: flex; justify-content: center; gap: 10px; }
-        .l-btn { background: none; border: 1px solid #d4af37; color: #d4af37; padding: 8px 15px; cursor: pointer; border-radius: 5px; text-transform: uppercase; }
-        .name { font-size: 2.2rem; text-transform: uppercase; color: #d4af37; margin-top: 20px; letter-spacing: 2px; }
-        .sub-title { color: #d4af37; font-size: 1rem; margin-bottom: 20px; opacity: 0.8; text-transform: uppercase; }
-        .nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 20px; }
-        .btn { padding: 12px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; font-size: 13px; min-width: 100px; text-transform: uppercase; border-radius: 5px; }
-        .card { width: 90%; max-width: 700px; margin: 20px auto; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 10px; border: 1px solid #333; }
-        video, img { width: 100%; border-radius: 5px; display: block; }
-        .section { border-top: 1px solid #d4af37; margin-top: 40px; padding: 20px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        body { background: #000; color: white; font-family: 'Orbitron', sans-serif; text-align: center; margin: 0; padding-bottom: 50px; overflow-x: hidden; }
+        .gold { color: #d4af37; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+        
+        /* Анимация: Златен Прах за Името */
+        .dust-name { font-size: 2.5rem; text-transform: uppercase; color: #d4af37; margin: 40px 0 10px 0; letter-spacing: 4px; display: inline-block; position: relative; }
+        .dust-name span { opacity: 0; animation: dustAssemble 2s forwards; display: inline-block; }
+        @keyframes dustAssemble {
+            0% { opacity: 0; transform: scale(3) rotate(20deg); filter: blur(10px); }
+            50% { opacity: 0.5; filter: blur(2px); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); filter: blur(0px); text-shadow: 0 0 15px #d4af37; }
+        }
+
+        .sub-title { color: rgba(212, 175, 55, 0.8); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
+
+        /* Ефект: Падаща Звезда/Комета за Снимките */
+        .comet-img-box { width: 90%; max-width: 450px; margin: 15px auto; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 10px; overflow: hidden; opacity: 0; transform: translateX(-100%) scale(0.1); animation: cometIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards; position: relative; box-shadow: 0 0 0px #d4af37; }
+        .comet-img-box::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent); animation: cometStreak 1s 0.5s; }
+        .comet-img-box img { width: 100%; display: block; }
+        
+        @keyframes cometIn {
+            0% { opacity: 0; transform: translateX(-100%) scale(0.1); box-shadow: 0 0 0px #d4af37; }
+            70% { opacity: 1; transform: translateX(5%) scale(1.05); box-shadow: 0 0 30px #d4af37; }
+            100% { opacity: 1; transform: translateX(0) scale(1); box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); border: 1px solid #d4af37; }
+        }
+        @keyframes cometStreak {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Забавяне на втората снимка */
+        .comet-2 { animation-delay: 0.8s; }
+
+        /* Бутони и Видеа */
+        .lang-switch { margin: 30px; display: flex; justify-content: center; gap: 10px; }
+        .l-btn { background: none; border: 1px solid rgba(212, 175, 55, 0.5); color: #d4af37; padding: 8px 15px; cursor: pointer; border-radius: 5px; font-family: sans-serif; transition: 0.3s; }
+        .l-btn:hover { background: rgba(212, 175, 55, 0.1); border-color: #d4af37; }
+        
+        .nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 20px; max-width: 600px; margin: 0 auto; }
+        .btn { padding: 12px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; font-size: 13px; min-width: 100px; text-transform: uppercase; border-radius: 5px; transition: 0.3s; position: relative; overflow: hidden; }
+        .btn:hover { background: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+
+        .card { width: 90%; max-width: 700px; margin: 25px auto; background: rgba(255,255,255,0.03); padding: 10px; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.1); box-shadow: 0 5px 15px rgba(0,0,0,0.5); transition: 0.3s; }
+        .card:hover { border-color: rgba(212, 175, 55, 0.5); transform: translateY(-3px); }
+        video { width: 100%; border-radius: 10px; display: block; outline: none; }
+
+        .section { border-top: 1px solid rgba(212, 175, 55, 0.3); margin-top: 50px; padding: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        
+        /* Google Font за по-технологичен вид */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
     </style>
 </head>
 <body>
+
+    <h1 class="dust-name" id="mainName">
+        <span>R</span><span>o</span><span>s</span><span>e</span><span>n</span> <span>A</span><span>n</span><span>t</span><span>o</span><span>n</span><span>o</span><span>v</span>
+    </h1>
+    <p id="sub" class="sub-title">Dramatic Tenor</p>
+
+    <div class="comet-img-box comet-1">
+        <img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png" alt="Rosen Antonov Photo 1">
+    </div>
+    <div class="comet-img-box comet-2">
+        <img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png" alt="Rosen Antonov Photo 2">
+    </div>
 
     <div class="lang-switch">
         <button class="l-btn" onclick="setL('bg')">BG</button>
         <button class="l-btn" onclick="setL('en')">EN</button>
     </div>
 
-    <h1 class="name">Rosen Antonov</h1>
-    <div id="sub" class="sub-title">Драматичен Тенор</div>
-
     <div class="nav">
         <a href="#" class="btn" id="m1">Галерия</a>
-        <a href="#" class="btn" id="m2">На Живо</a>
+        <a href="#" class="btn" id="m2">Live</a>
         <a href="#buy" class="btn" id="m3">Купи</a>
         <a href="https://www.facebook.com/share/1BcLUTBR9o/" target="_blank" class="btn">Facebook</a>
     </div>
 
-    <div class="card"><video controls playsinline><source src="Video1.mp4" type="video/mp4"></video></div>
-    <div class="card"><video controls playsinline><source src="Video2.mp4" type="video/mp4"></video></div>
-    <div class="card"><video controls playsinline><source src="Video3.mp4" type="video/mp4"></video></div>
-
-    <div class="card"><img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png"></div>
-    <div class="card"><img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png"></div>
+    <div class="card"><video controls playsinline preload="metadata"><source src="Video1.mp4" type="video/mp4"></video></div>
+    <div class="card"><video controls playsinline preload="metadata"><source src="FDownloader.Net_AQN_GbNG7R93pf46vNMLzZbz8tTQwWl9o8xbG0QFnJorZ_RF36xP8cY4gzMF90psmFfVvYeRb-S2PWPJtDxDLkMx6bZAIndfy5uvJd0YNw_360p_(SD).mp4" type="video/mp4"></video></div>
+    <div class="card"><video controls playsinline preload="metadata"><source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w (1).mp4" type="video/mp4"></video></div>
 
     <div class="section" id="buy">
         <h2 id="t1" class="gold">КУПИ</h2>
         <p id="t2">Очаквайте скоро</p>
     </div>
-
     <div class="section">
         <h2 id="t3" class="gold">ПАРТНЬОРИ</h2>
     </div>
 
     <script>
+        // Добавяне на забавяне за всяка буква от името
+        document.querySelectorAll('.dust-name span').forEach((span, index) => {
+            span.style.animationDelay = `${index * 0.1}s`;
+        });
+
         const dict = {
             bg: { s: "Драматичен Тенор", m1: "Галерия", m2: "На Живо", m3: "Купи", t1: "КУПИ", t2: "Очаквайте скоро", t3: "ПАРТНЬОРИ" },
             en: { s: "Dramatic Tenor", m1: "Gallery", m2: "Live Streaming", m3: "Buy", t1: "BUY", t2: "Coming Soon", t3: "PARTNERS" }
         };
         function setL(l) {
-            document.getElementById
+            document.getElementById('sub').innerText = dict[l].s;
+            document.getElementById('m1').innerText = dict[l].m1;
+            document.getElementById('m2').innerText = dict[l].m2;
+            document.getElementById('m3').innerText = dict[l].m3;
+            document.getElementById('t1').innerText = dict[l].t1;
+            document.getElementById('t2').innerText = dict[l].t2;
+            document.getElementById('t3').innerText = dict[l].t3;
+        }
+    </script>
+</body>
+</html>
