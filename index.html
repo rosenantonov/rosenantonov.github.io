@@ -3,31 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROSEN ANTONOV</title>
+    <title>ROSEN ANTONOV | DRAMATIC TENOR</title>
     <style>
-        :root { --gold: #d4af37; --dark: #0a0a0a; --glass: rgba(255, 255, 255, 0.08); }
-        body { background: var(--dark); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; text-align: center; padding-bottom: 50px; }
+        :root { --gold: #d4af37; --dark: #0a0a0a; --glass: rgba(255, 255, 255, 0.07); }
+        body { background: var(--dark); color: white; font-family: sans-serif; margin: 0; text-align: center; padding-bottom: 50px; }
         
         .lang-switch { position: absolute; top: 10px; right: 10px; display: flex; gap: 5px; }
-        .lang-btn { background: none; color: var(--gold); border: 1px solid var(--gold); padding: 5px 8px; cursor: pointer; font-size: 0.7rem; border-radius: 4px; }
+        .lang-btn { background: none; color: var(--gold); border: 1px solid var(--gold); padding: 5px; cursor: pointer; font-size: 0.7rem; }
 
-        .hero-name { 
-            font-size: 2.4rem; text-transform: uppercase; margin: 60px 0 5px; letter-spacing: 5px; font-weight: bold;
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #bf953f);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            animation: shine 5s linear infinite;
+        .hero-name { font-size: 2.5rem; color: var(--gold); margin: 60px 0 10px; letter-spacing: 5px; text-transform: uppercase; }
+        .sub-title { color: var(--gold); opacity: 0.8; letter-spacing: 2px; margin-bottom: 30px; }
+
+        .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0 10px; }
+        .btn-gold { padding: 10px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 0.7rem; flex: 1 1 120px; text-transform: uppercase; }
+
+        .video-card { background: var(--glass); padding: 10px; border-radius: 15px; margin: 20px auto; width: 90%; max-width: 700px; border: 1px solid rgba(212, 175, 55, 0.2); }
+        video { width: 100%; border-radius: 10px; background: #000; }
+
+        .section-photo { width: 90%; max-width: 450px; border: 1px solid var(--gold); margin: 20px auto; display: block; border-radius: 10px; }
+        
+        .content-section { margin-top: 50px; border-top: 1px solid var(--gold); padding: 20px; }
+        .buy-box { border: 1px dashed var(--gold); padding: 20px; margin: 10px auto; max-width: 600px; }
+    </style>
+</head>
+<body>
+
+    <div class="lang-switch">
+        <button class="lang-btn" onclick="changeLang('bg')">BG</button>
+        <button class="lang-btn" onclick="changeLang('en')">EN</button>
+        <button class="lang-btn" onclick="changeLang('zh')">中文</button>
+    </div>
+
+    <h1 class="hero-name">Rosen Antonov</h1>
+    <div id="subTitle" class="sub-title">Dramatic Tenor</div>
+
+    <div class="nav-container">
+        <a href="#" class="btn-gold" id="nav-gallery">Галерия</a>
+        <a href="#" class="btn-gold" id="nav-live">Live</a>
+        <a href="#" class="btn-gold" id="nav-news">News</a>
+        <a href="#buy" class="btn-gold" id="nav-buy">Купи</a>
+        <a href="https://www.facebook.com/share/1BcLUTBR9o/" class="btn-gold">Contacts</a>
+    </div>
+
+    <div class="video-card"><video controls><source src="video1.mp4.mp4" type="video/mp4"><source src="video1.mp4" type="video/mp4"></video></div>
+    <div class="video-card"><video controls><source src="video2.mp4.mp4" type="video/mp4"><source src="video2.mp4" type="video/mp4"></video></div>
+    <div class="video-card"><video controls><source src="video3.mp4.mp4" type="video/mp4"><source src="video3.mp4" type="video/mp4"></video></div>
+
+    <img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png" class="section-photo">
+    <img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png" class="section-photo">
+
+    <div class="content-section" id="buy">
+        <h2 id="buyTitle" style="color: var(--gold);">КУПИ</h2>
+        <div class="buy-box" id="buyText">Очаквайте скоро</div>
+    </div>
+
+    <div class="content-section">
+        <h2 id="partnersTitle" style="color: var(--gold);">ПАРТНЬОРИ</h2>
+    </div>
+
+    <script>
+        const translations = {
+            bg: { sub: "Драматичен Тенор", buy: "Купи", buyText: "Очаквайте скоро", partners: "Партньори" },
+            en: { sub: "Dramatic Tenor", buy: "Buy", buyText: "Coming Soon", partners: "Partners" },
+            zh: { sub: "戏剧男高音", buy: "购买", buyText: "敬请期待", partners: "合作伙伴" }
+        };
+        function changeLang(l) {
+            document.getElementById('subTitle').innerText = translations[l].sub;
+            document.getElementById('buyTitle').innerText = translations[l].buy;
+            document.getElementById('nav-buy').innerText = translations[l].buy;
+            document.getElementById('buyText').innerText = translations[l].buyText;
+            document.getElementById('partnersTitle').innerText = translations[l].partners;
         }
-        @keyframes shine { to { background-position: 200% center; } }
-        
-        .sub-title { color: var(--gold); font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 30px; opacity: 0.8; }
-
-        .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 0 15px; margin-bottom: 30px; }
-        .btn-gold { padding: 10px 15px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; border-radius: 5px; font-size: 0.7rem; text-transform: uppercase; flex: 1 1 120px; max-width: 180px; }
-
-        .video-card { background: var(--glass); padding: 10px; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 20px auto; width: 90%; max-width: 700px; }
-        video { width: 100%; border-radius: 10px; display: block; background: #000; }
-        
-        .section-photo { width: 90%; max-width: 450px; border-radius: 15px; border: 1px solid var(--gold); margin: 25px auto; display: block; box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); }
-
-        .content-section { margin: 40px auto; padding: 20px; border-top: 1px solid rgba(212, 175, 55, 0.2); max-width: 700px; }
-        .section-title
+    </script>
+</body>
+</html>
