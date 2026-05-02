@@ -5,79 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROSEN ANTONOV</title>
     <style>
-        body { background-color: #0a0a0a; color: white; font-family: sans-serif; margin: 0; text-align: center; padding-bottom: 50px; }
+        body { background: #0a0a0a; color: white; font-family: sans-serif; text-align: center; margin: 0; padding-bottom: 50px; }
         .gold { color: #d4af37; }
         .lang-switch { margin: 20px; display: flex; justify-content: center; gap: 10px; }
-        .lang-btn { background: transparent; color: #d4af37; border: 1px solid #d4af37; padding: 8px 15px; cursor: pointer; border-radius: 5px; }
-        .name { font-size: 2.2rem; text-transform: uppercase; color: #d4af37; margin-top: 20px; letter-spacing: 3px; }
-        .sub-title { color: #d4af37; font-size: 1rem; margin-bottom: 20px; opacity: 0.8; text-transform: uppercase; }
-        .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 0 10px; }
-        .btn-gold { padding: 12px 20px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; border-radius: 5px; font-size: 0.8rem; text-transform: uppercase; }
-        .card { background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 10px; border: 1px solid #333; margin: 20px auto; width: 90%; max-width: 700px; }
+        .l-btn { background: none; border: 1px solid #d4af37; color: #d4af37; padding: 8px 15px; cursor: pointer; border-radius: 5px; }
+        .name { font-size: 2.2rem; text-transform: uppercase; color: #d4af37; margin-top: 20px; letter-spacing: 2px; }
+        .nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 20px; }
+        .btn { padding: 12px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; font-size: 13px; min-width: 100px; text-transform: uppercase; }
+        .card { width: 90%; max-width: 700px; margin: 20px auto; background: #111; padding: 10px; border-radius: 10px; border: 1px solid #333; }
         video, img { width: 100%; border-radius: 5px; display: block; }
-        .section { margin-top: 40px; padding: 20px; border-top: 1px solid #d4af37; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .section { border-top: 1px solid #d4af37; margin-top: 40px; padding: 20px; max-width: 700px; margin-left: auto; margin-right: auto; }
     </style>
 </head>
 <body>
 
     <div class="lang-switch">
-        <button class="lang-btn" onclick="setL('bg')">BG</button>
-        <button class="lang-btn" onclick="setL('en')">EN</button>
+        <button class="l-btn" onclick="setL('bg')">BG</button>
+        <button class="l-btn" onclick="setL('en')">EN</button>
     </div>
 
     <h1 class="name">Rosen Antonov</h1>
-    <div class="sub-title" id="sub">Драматичен Тенор</div>
-    
-    <div class="nav-container">
-        <a href="#" class="btn-gold" id="m1">Галерия</a>
-        <a href="#" class="btn-gold" id="m2">На Живо</a>
-        <a href="#buy" class="btn-gold" id="m3">Купи</a>
-        <a href="https://www.facebook.com/share/1BcLUTBR9o/" target="_blank" class="btn-gold">Facebook</a>
-    </div>
+    <p id="sub" class="gold">Драматичен Тенор</p>
 
-    <div class="card">
-        <video controls playsinline>
-            <source src="DELAILAH  ROSEN ANTONOV РОСЕН АНТОНОВ (1).mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="card">
-        <video controls playsinline>
-            <source src="FDownloader.Net_AQN_GbNG7R93pf46vNMLzZbz8tTQwWl9o8xbG0QFnJorZ_RF36xP8cY4gzMF90psmFfVvYeRb-S2PWPJtDxDLkMx6bZAIndfy5uvJd0YNw_360p_(SD).mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="card">
-        <video controls playsinline>
-            <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w (1).mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <div class="card"><img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png"></div>
-    <div class="card"><img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png"></div>
-
-    <div class="section" id="buy">
-        <h2 id="t1" class="gold">КУПИ</h2>
-        <p id="t2">Очаквайте скоро</p>
-    </div>
-
-    <div class="section">
-        <h2 id="t3" class="gold">ПАРТНЬОРИ</h2>
-    </div>
-
-    <script>
-        const dict = {
-            bg: { s: "Драматичен Тенор", m1: "Галерия", m2: "На Живо", m3: "Купи", t1: "КУПИ", t2: "Очаквайте скоро", t3: "ПАРТНЬОРИ" },
-            en: { s: "Dramatic Tenor", m1: "Gallery", m2: "Live Streaming", m3: "Buy", t1: "BUY", t2: "Coming Soon", t3: "PARTNERS" }
-        };
-
-        function setL(l) {
-            document.getElementById('sub').innerText = dict[l].s;
-            document.getElementById('m1').innerText = dict[l].m1;
-            document.getElementById('m2').innerText = dict[l].m2;
-            document.getElementById('m3').innerText = dict[l].m3;
-            document.getElementById('t1').innerText = dict[l].t1;
-            document.getElementById('t2').innerText = dict[l].t2;
-            document.getElementById('t3').innerText = dict[l].t3;
-        }
-    </script>
-</body>
-</html>
+    <div class="nav">
+        <a href="#" class="btn" id="m1">Галерия</a>
+        <a href="#" class="btn" id="m2">На Живо</a>
+        <a href="#buy" class="btn" id="m3">Купи</a>
+        <a href="https://www.facebook.
