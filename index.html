@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROSEN ANTONOV</title>
     <style>
-        body { background: #0a0a0a; color: white; font-family: sans-serif; text-align: center; margin: 0; padding-bottom: 50px; }
+        body { background: #000; color: #fff; font-family: sans-serif; text-align: center; margin: 0; padding-bottom: 50px; }
         .gold { color: #d4af37; }
-        .lang-bar { position: absolute; top: 10px; right: 10px; display: flex; gap: 5px; }
-        .l-btn { background: none; border: 1px solid #d4af37; color: #d4af37; padding: 5px; cursor: pointer; font-size: 12px; }
-        .name { font-size: 28px; margin-top: 60px; text-transform: uppercase; color: #d4af37; letter-spacing: 3px; }
-        .menu { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 20px; }
-        .btn { padding: 10px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; font-size: 12px; min-width: 110px; text-transform: uppercase; }
-        .container { width: 90%; max-width: 700px; margin: 20px auto; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 10px; border: 1px solid #333; }
-        video, img { width: 100%; border-radius: 5px; display: block; }
-        .section { margin-top: 40px; padding: 20px; border-top: 1px solid #d4af37; }
+        .lang-bar { margin: 15px; display: flex; justify-content: center; gap: 10px; }
+        .l-btn { background: none; border: 1px solid #d4af37; color: #d4af37; padding: 5px 10px; cursor: pointer; }
+        .name { font-size: 26px; margin-top: 30px; text-transform: uppercase; color: #d4af37; letter-spacing: 2px; }
+        .nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 20px; }
+        .btn { padding: 12px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; font-size: 13px; min-width: 100px; text-transform: uppercase; }
+        .v-card { width: 90%; max-width: 600px; margin: 20px auto; background: #111; padding: 10px; border-radius: 10px; border: 1px solid #333; }
+        video { width: 100%; height: auto; display: block; border-radius: 5px; }
+        .img-box { width: 90%; max-width: 450px; margin: 20px auto; border: 1px solid #d4af37; border-radius: 10px; overflow: hidden; }
+        .img-box img { width: 100%; display: block; }
+        .line { border-top: 1px solid #d4af37; margin-top: 40px; padding: 20px; }
     </style>
 </head>
 <body>
@@ -28,43 +30,60 @@
     <h1 class="name">Rosen Antonov</h1>
     <p id="sub" class="gold">Dramatic Tenor</p>
 
-    <div class="menu">
+    <div class="nav">
         <a href="#" class="btn" id="m1">Галерия</a>
         <a href="#" class="btn" id="m2">Live</a>
         <a href="#buy" class="btn" id="m3">Купи</a>
         <a href="https://www.facebook.com/share/1BcLUTBR9o/" class="btn">Facebook</a>
     </div>
 
-    <div class="container"><video controls playsinline><source src="video1.mp4.mp4" type="video/mp4"></video></div>
-    <div class="container"><video controls playsinline><source src="video2.mp4.mp4" type="video/mp4"></video></div>
-    <div class="container"><video controls playsinline><source src="video3.mp4.mp4" type="video/mp4"></video></div>
+    <div class="v-card">
+        <video controls preload="metadata" playsinline>
+            <source src="video1.mp4.mp4" type="video/mp4">
+            <source src="video1.mp4" type="video/mp4">
+        </video>
+    </div>
 
-    <div class="container"><img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png"></div>
-    <div class="container"><img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png"></div>
+    <div class="v-card">
+        <video controls preload="metadata" playsinline>
+            <source src="video2.mp4.mp4" type="video/mp4">
+            <source src="video2.mp4" type="video/mp4">
+        </video>
+    </div>
 
-    <div class="section" id="buy">
+    <div class="v-card">
+        <video controls preload="metadata" playsinline>
+            <source src="video3.mp4.mp4" type="video/mp4">
+            <source src="video3.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="img-box"><img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png"></div>
+    <div class="img-box"><img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png"></div>
+
+    <div class="line" id="buy">
         <h2 id="t1" class="gold">КУПИ</h2>
         <p id="t2">Очаквайте скоро</p>
     </div>
 
-    <div class="section">
+    <div class="line">
         <h2 id="t3" class="gold">ПАРТНЬОРИ</h2>
     </div>
 
     <script>
-        const dict = {
+        const d = {
             bg: { s: "Драматичен Тенор", m1: "Галерия", m2: "На живо", m3: "Купи", t1: "КУПИ", t2: "Очаквайте скоро", t3: "ПАРТНЬОРИ" },
             en: { s: "Dramatic Tenor", m1: "Gallery", m2: "Live", m3: "Buy", t1: "BUY", t2: "Coming Soon", t3: "PARTNERS" },
             ru: { s: "Драматический Тенор", m1: "Галерея", m2: "Прямой эфир", m3: "Купить", t1: "КУПИТЬ", t2: "Скоро", t3: "ПАРТНЕРЫ" }
         };
         function setL(l) {
-            document.getElementById('sub').innerText = dict[l].s;
-            document.getElementById('m1').innerText = dict[l].m1;
-            document.getElementById('m2').innerText = dict[l].m2;
-            document.getElementById('m3').innerText = dict[l].m3;
-            document.getElementById('t1').innerText = dict[l].t1;
-            document.getElementById('t2').innerText = dict[l].t2;
-            document.getElementById('t3').innerText = dict[l].t3;
+            document.getElementById('sub').innerText = d[l].s;
+            document.getElementById('m1').innerText = d[l].m1;
+            document.getElementById('m2').innerText = d[l].m2;
+            document.getElementById('m3').innerText = d[l].m3;
+            document.getElementById('t1').innerText = d[l].t1;
+            document.getElementById('t2').innerText = d[l].t2;
+            document.getElementById('t3').innerText = d[l].t3;
         }
     </script>
 
