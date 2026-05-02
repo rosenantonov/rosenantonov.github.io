@@ -38,11 +38,10 @@
             border-radius: 15px; 
             border: 2px solid var(--gold); 
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); 
-            margin: 15px auto;
+            margin: 20px auto;
             display: block;
         }
 
-        /* Стил за бутоните */
         .nav-container {
             display: flex;
             flex-wrap: wrap;
@@ -53,17 +52,18 @@
             padding: 0 15px;
         }
         .btn-gold {
-            padding: 12px 20px;
+            padding: 12px 18px;
             background: transparent;
             color: var(--gold);
             border: 1px solid var(--gold);
             text-decoration: none;
             border-radius: 5px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: 0.3s;
-            min-width: 140px;
+            flex: 1 1 140px;
+            max-width: 200px;
         }
         .btn-gold:hover {
             background: var(--gold);
@@ -88,7 +88,7 @@
         h2 { color: var(--gold); text-transform: uppercase; font-size: 1rem; margin-bottom: 15px; letter-spacing: 2px; }
         video { width: 100%; border-radius: 10px; background: #000; }
         
-        .footer { margin-top: 50px; color: var(--gold); font-size: 0.7rem; opacity: 0.5; }
+        .footer { margin-top: 50px; color: var(--gold); font-size: 0.7rem; opacity: 0.5; letter-spacing: 2px; }
     </style>
 </head>
 <body>
@@ -97,6 +97,7 @@
     <div class="sub-title">Dramatic Tenor</div>
     
     <img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png" alt="Limo" class="main-photo">
+    
     <img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png" alt="Gold Statue" class="main-photo">
 
     <div class="nav-container">
@@ -110,16 +111,23 @@
     </div>
 
     <div class="video-card">
-        <h2><span style="color:red">●</span> Live Performance I</h2>
+        <h2><span style="color:red">●</span> Live Performance - Мъглиж</h2>
         <video controls>
             <source src="FDownloader.Net_AQN_GbNG7R93pf46vNMLzZbz8tTQwWl9o8xbG0QFnJorZ_RF36xP8cY4gzMF90psmFfVvYeRb-S2PWPJtDxDLkMx6bZAIndfy5uvJd0YNw_360p_(SD).mp4" type="video/mp4">
         </video>
     </div>
 
     <div class="video-card">
-        <h2><span style="color:red">●</span> Live Performance II</h2>
+        <h2><span style="color:red">●</span> Коледен Спектакъл</h2>
         <video controls>
             <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w%20(1).mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-card">
+        <h2><span style="color:red">●</span> Live Performance III</h2>
+        <video controls>
+            <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w.mp4" type="video/mp4">
         </video>
     </div>
 
