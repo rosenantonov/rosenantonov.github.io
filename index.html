@@ -8,18 +8,24 @@
     <style>
         body { background: #000; color: white; font-family: 'Orbitron', sans-serif; text-align: center; margin: 0; padding-bottom: 50px; overflow-x: hidden; }
         .gold { color: #d4af37; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+        
+        /* Анимация: Златен Прах за Името */
         .dust-name { font-size: 2.2rem; text-transform: uppercase; color: #d4af37; margin: 30px 0 5px 0; letter-spacing: 4px; display: inline-block; position: relative; }
         .dust-name span { opacity: 0; animation: dustAssemble 1.5s forwards; display: inline-block; }
         @keyframes dustAssemble {
             0% { opacity: 0; transform: scale(3) rotate(20deg); filter: blur(10px); }
             100% { opacity: 1; transform: scale(1) rotate(0deg); filter: blur(0px); text-shadow: 0 0 15px #d4af37; }
         }
+
         .sub-title { color: rgba(212, 175, 55, 0.8); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+
+        /* Ефект: Поява от Огъня за Снимките */
         .fire-photo-container { position: relative; width: 90%; max-width: 450px; margin: 0 auto 20px auto; opacity: 0; animation: fadeInAfterName 0.5s 1.5s forwards; }
         .fire-core { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 100px; height: 100px; background: radial-gradient(circle, #fff, #ffda44, #ff8c00, #ff4500, transparent 70%); border-radius: 50%; filter: blur(10px); animation: fireBirth 2s 1.8s ease-out forwards; z-index: 1; }
         .fire-img-box { width: 100%; border-radius: 10px; overflow: hidden; opacity: 0; transform: scale(0.5) rotateY(90deg); animation: photoFromFire 2.5s 2.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; position: relative; z-index: 2; margin-bottom: 15px; }
         .fire-img-box img { width: 100%; display: block; border-radius: 10px; }
         .img-box-2 { animation-delay: 2.8s; }
+
         @keyframes fadeInAfterName { 100% { opacity: 1; } }
         @keyframes fireBirth {
             0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
@@ -30,13 +36,18 @@
             0% { opacity: 0; transform: scale(0.5) rotateY(90deg); filter: brightness(3); }
             100% { opacity: 1; transform: scale(1) rotateY(0deg); box-shadow: 0 0 15px 2px rgba(212, 175, 55, 0.5); border: 1px solid #d4af37; }
         }
+
+        /* Меню и Бутони */
         .lang-switch { margin: 20px; display: flex; justify-content: center; gap: 10px; }
         .l-btn { background: none; border: 1px solid rgba(212, 175, 55, 0.5); color: #d4af37; padding: 6px 12px; cursor: pointer; border-radius: 5px; font-family: sans-serif; transition: 0.3s; }
         .nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 15px; max-width: 600px; margin: 0 auto; }
         .btn { padding: 10px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; font-size: 12px; min-width: 90px; text-transform: uppercase; border-radius: 5px; transition: 0.3s; font-weight: bold; }
         .btn:hover { background: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
-        .card { width: 90%; max-width: 700px; margin: 20px auto; background: rgba(255,255,255,0.03); padding: 8px; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.1); }
-        video { width: 100%; border-radius: 8px; display: block; }
+
+        /* Графа Видео (Карти) */
+        .card { width: 90%; max-width: 700px; margin: 20px auto; background: rgba(255,255,255,0.03); padding: 8px; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.1); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        video { width: 100%; border-radius: 8px; display: block; outline: none; }
+
         .section { border-top: 1px solid rgba(212, 175, 55, 0.3); margin-top: 40px; padding: 25px; max-width: 700px; margin: 40px auto; }
     </style>
 </head>
@@ -45,66 +56,4 @@
     <h1 class="dust-name" id="mainName">
         <span>R</span><span>o</span><span>s</span><span>e</span><span>n</span> <span>A</span><span>n</span><span>t</span><span>o</span><span>n</span><span>o</span><span>v</span>
     </h1>
-    <p id="sub" class="sub-title gold">Dramatic Tenor</p>
-
-    <div class="fire-photo-container">
-        <div class="fire-core"></div>
-        <div class="fire-img-box img-box-1">
-            <img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png">
-        </div>
-        <div class="fire-img-box img-box-2">
-            <img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png">
-        </div>
-    </div>
-
-    <div class="lang-switch">
-        <button class="l-btn" onclick="setL('bg')">BG</button>
-        <button class="l-btn" onclick="setL('en')">EN</button>
-    </div>
-
-    <div class="nav">
-        <a href="#" class="btn" id="m1">Галерия</a>
-        <a href="#" class="btn" id="m2">Live</a>
-        <a href="#buy" class="btn" id="m3">Купи</a>
-        <a href="https://www.facebook.com/share/1BcLUTBR9o/" target="_blank" class="btn">Facebook</a>
-    </div>
-
-    <div class="card"><video controls playsinline><source src="Video1.mp4" type="video/mp4"></video></div>
-
-    <div class="card"><video controls playsinline><source src="FDownloader.Net_AQN_GbNG7R93pf46vNMLzZbz8tTQwWl9o8xbG0QFnJorZ_RF36xP8cY4gzMF90psmFfVvYeRb-S2PWPJtDxDLkMx6bZAIndfy5uvJd0YNw_360p_(SD).mp4" type="video/mp4"></video></div>
-
-    <div class="card">
-        <video controls playsinline>
-            <source src="Video3.mp4" type="video/mp4">
-            <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w%20(1).mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <div class="section" id="buy">
-        <h2 id="t1" class="gold">КУПИ</h2>
-        <p id="t2">Очаквайте скоро</p>
-    </div>
-    <div class="section">
-        <h2 id="t3" class="gold">ПАРТНЬОРИ</h2>
-    </div>
-
-    <script>
-        document.querySelectorAll('.dust-name span').forEach((span, index) => {
-            span.style.animationDelay = `${index * 0.08}s`;
-        });
-        const dict = {
-            bg: { s: "Драматичен Тенор", m1: "Галерия", m2: "На Живо", m3: "Купи", t1: "КУПИ", t2: "Очаквайте скоро", t3: "ПАРТНЬОРИ" },
-            en: { s: "Dramatic Tenor", m1: "Gallery", m2: "Live Streaming", m3: "Buy", t1: "BUY", t2: "Coming Soon", t3: "PARTNERS" }
-        };
-        function setL(l) {
-            document.getElementById('sub').innerText = dict[l].s;
-            document.getElementById('m1').innerText = dict[l].m1;
-            document.getElementById('m2').innerText = dict[l].m2;
-            document.getElementById('m3').innerText = dict[l].m3;
-            document.getElementById('t1').innerText = dict[l].t1;
-            document.getElementById('t2').innerText = dict[l].t2;
-            document.getElementById('t3').innerText = dict[l].t3;
-        }
-    </script>
-</body>
-</html>
+    <p id="sub" class="sub-title gold">Dramatic Tenor
