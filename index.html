@@ -3,120 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROSEN ANTONOV | DRAMATIC TENOR</title>
+    <title>ROSEN ANTONOV</title>
     <style>
-        :root { --gold: #d4af37; --dark: #0a0a0a; --glass: rgba(255, 255, 255, 0.07); }
-        body { 
-            background-color: var(--dark); color: white; font-family: 'Segoe UI', sans-serif; 
-            margin: 0; text-align: center; padding-bottom: 50px; overflow-x: hidden; scroll-behavior: smooth;
-        }
+        :root { --gold: #d4af37; --dark: #0a0a0a; --glass: rgba(255, 255, 255, 0.08); }
+        body { background: var(--dark); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; text-align: center; padding-bottom: 50px; }
+        
+        .lang-switch { position: absolute; top: 10px; right: 10px; display: flex; gap: 5px; }
+        .lang-btn { background: none; color: var(--gold); border: 1px solid var(--gold); padding: 5px 8px; cursor: pointer; font-size: 0.7rem; border-radius: 4px; }
 
-        /* ЕЗИКОВ ПАНЕЛ */
-        .lang-switch { position: absolute; top: 10px; right: 10px; z-index: 100; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 5px; }
-        .lang-btn { 
-            background: transparent; color: var(--gold); border: 1px solid var(--gold); 
-            padding: 4px 8px; cursor: pointer; font-size: 0.7rem; border-radius: 3px; transition: 0.3s;
-        }
-        .lang-btn:hover { background: var(--gold); color: black; }
-
-        /* ИМЕ */
         .hero-name { 
-            font-size: 2.5rem; text-transform: uppercase; 
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fcf6ba, #bf953f);
-            background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
-            margin: 60px 0 10px 0; font-weight: bold; letter-spacing: 5px;
+            font-size: 2.4rem; text-transform: uppercase; margin: 60px 0 5px; letter-spacing: 5px; font-weight: bold;
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #bf953f);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             animation: shine 5s linear infinite;
         }
         @keyframes shine { to { background-position: 200% center; } }
+        
+        .sub-title { color: var(--gold); font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 30px; opacity: 0.8; }
 
-        .sub-title { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 20px; opacity: 0.9; }
+        .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 0 15px; margin-bottom: 30px; }
+        .btn-gold { padding: 10px 15px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; border-radius: 5px; font-size: 0.7rem; text-transform: uppercase; flex: 1 1 120px; max-width: 180px; }
 
-        /* НАВИГАЦИЯ */
-        .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 900px; margin: 20px auto; padding: 0 10px; }
-        .btn-gold {
-            padding: 10px 15px; background: transparent; color: var(--gold); border: 1px solid var(--gold);
-            text-decoration: none; border-radius: 5px; font-size: 0.7rem; text-transform: uppercase;
-            transition: 0.3s; flex: 1 1 120px;
-        }
-        .btn-gold:hover { background: var(--gold); color: black; box-shadow: 0 0 10px var(--gold); }
-
-        /* ВИДЕА И СНИМКИ */
-        .video-card { background: var(--glass); padding: 10px; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.1); margin: 20px auto; width: 90%; max-width: 800px; }
+        .video-card { background: var(--glass); padding: 10px; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 20px auto; width: 90%; max-width: 700px; }
         video { width: 100%; border-radius: 10px; display: block; background: #000; }
-        .section-photo { width: 95%; max-width: 500px; border-radius: 15px; border: 1px solid var(--gold); margin: 25px auto; display: block; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+        
+        .section-photo { width: 90%; max-width: 450px; border-radius: 15px; border: 1px solid var(--gold); margin: 25px auto; display: block; box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); }
 
-        /* СЕКЦИИ */
-        .content-section { margin: 50px auto; padding: 30px 20px; border-top: 1px solid rgba(212, 175, 55, 0.2); max-width: 800px; }
-        .section-title { color: var(--gold); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px; font-size: 1.2rem; }
-        .buy-box { border: 1px dashed var(--gold); padding: 20px; border-radius: 10px; background: rgba(212, 175, 55, 0.05); }
-
-        .footer { margin-top: 40px; color: var(--gold); font-size: 0.6rem; opacity: 0.5; }
-    </style>
-</head>
-<body>
-
-    <div class="lang-switch">
-        <button class="lang-btn" onclick="changeLang('bg')">BG</button>
-        <button class="lang-btn" onclick="changeLang('en')">EN</button>
-        <button class="lang-btn" onclick="changeLang('ru')">RU</button>
-        <button class="lang-btn" onclick="changeLang('zh')">中文</button>
-    </div>
-
-    <h1 class="hero-name">Rosen Antonov</h1>
-    <div class="sub-title" id="subTitle">Dramatic Tenor</div>
-    
-    <div class="nav-container">
-        <a href="#" class="btn-gold" id="nav-gallery">Галерия</a>
-        <a href="#" class="btn-gold" id="nav-live">Live Streaming</a>
-        <a href="#" class="btn-gold" id="nav-perf">Performances</a>
-        <a href="#" class="btn-gold" id="nav-news">News</a>
-        <a href="#" class="btn-gold" id="nav-about">About</a>
-        <a href="#buy-section" class="btn-gold" id="nav-buy">Купи</a>
-        <a href="https://www.facebook.com/share/1BcLUTBR9o/" target="_blank" class="btn-gold" id="nav-contacts">Contacts</a>
-    </div>
-
-    <div class="video-card"><video controls playsinline><source src="video1.mp4.mp4" type="video/mp4"></video></div>
-    <div class="video-card"><video controls playsinline><source src="video2.mp4.mp4" type="video/mp4"></video></div>
-    <div class="video-card"><video controls playsinline><source src="video3.mp4.mp4" type="video/mp4"></video></div>
-
-    <img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png" alt="Statue" class="section-photo">
-    <img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png" alt="Limo" class="section-photo">
-
-    <div class="content-section" id="buy-section">
-        <div class="section-title" id="buyTitle">Купи</div>
-        <div class="buy-box">
-            <p id="buyText">Coming Soon / Очаквайте скоро</p>
-        </div>
-    </div>
-
-    <div class="content-section">
-        <div class="section-title" id="partnersTitle">Партньори</div>
-        <div style="height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); width: 80%; margin: 0 auto; opacity: 0.3;"></div>
-    </div>
-
-    <div class="footer">PROFESSIONAL PORTFOLIO &copy; 2026</div>
-
-    <script>
-        const translations = {
-            bg: { sub: "Драматичен Тенор", gallery: "Галерия", live: "На Живо", perf: "Изпълнения", news: "Новини", about: "За мен", buy: "Купи", buyText: "Очаквайте скоро", contacts: "Контакти", partners: "Партньори" },
-            en: { sub: "Dramatic Tenor", gallery: "Gallery", live: "Live Streaming", perf: "Performances", news: "News", about: "About", buy: "Buy", buyText: "Coming Soon", contacts: "Contacts", partners: "Partners" },
-            ru: { sub: "Драматический Тенор", gallery: "Галерея", live: "Прямой эфир", perf: "Выступления", news: "Новости", about: "Обо мне", buy: "Купить", buyText: "Скоро будет", contacts: "Контакты", partners: "Партнеры" },
-            zh: { sub: "戏剧男高音", gallery: "画廊", live: "现场直播", perf: "演出", news: "新闻", about: "关于我", buy: "购买", buyText: "敬请期待", contacts: "联系方式", partners: "合作伙伴" }
-        };
-
-        function changeLang(lang) {
-            document.getElementById('subTitle').innerText = translations[lang].sub;
-            document.getElementById('nav-gallery').innerText = translations[lang].gallery;
-            document.getElementById('nav-live').innerText = translations[lang].live;
-            document.getElementById('nav-perf').innerText = translations[lang].perf;
-            document.getElementById('nav-news').innerText = translations[lang].news;
-            document.getElementById('nav-about').innerText = translations[lang].about;
-            document.getElementById('nav-buy').innerText = translations[lang].buy;
-            document.getElementById('nav-contacts').innerText = translations[lang].contacts;
-            document.getElementById('buyTitle').innerText = translations[lang].buy;
-            document.getElementById('buyText').innerText = translations[lang].buyText;
-            document.getElementById('partnersTitle').innerText = translations[lang].partners;
-        }
-    </script>
-</body>
-</html>
+        .content-section { margin: 40px auto; padding: 20px; border-top: 1px solid rgba(212, 175, 55, 0.2); max-width: 700px; }
+        .section-title
