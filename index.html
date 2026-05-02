@@ -3,118 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROSEN ANTONOV | DRAMATIC TENOR</title>
+    <title>ROSEN ANTONOV | THE LEGEND</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #d4af37; --dark: #0a0a0a; --glass: rgba(255, 255, 255, 0.07); }
-        body { 
-            background-color: var(--dark); 
-            color: white; 
-            font-family: 'Segoe UI', sans-serif; 
-            margin: 0; 
-            text-align: center; 
-            padding-bottom: 50px;
+        :root {
+            --primary: #d4af37;
+            --bg: #050505;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text: #ffffff;
+        }
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
             overflow-x: hidden;
-            scroll-behavior: smooth;
+            line-height: 1.6;
         }
-
-        .hero-name { 
-            font-size: 3rem; 
-            text-transform: uppercase; 
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fcf6ba, #bf953f);
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%);
+            z-index: -1;
+        }
+        header {
+            padding: 80px 20px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .subtitle {
+            font-size: clamp(0.7rem, 2vw, 1rem);
+            letter-spacing: 6px;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: clamp(2rem, 8vw, 4.5rem);
+            margin: 0;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-weight: 900;
+            background: linear-gradient(to right, #fff, var(--primary), #fff);
             background-size: 200% auto;
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            margin: 40px 0 10px 0; 
-            font-weight: bold; 
-            letter-spacing: 8px;
-            animation: gatherDust 3.5s ease-out forwards, shine 5s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
         }
-
-        .animated-statue {
-            width: 90%; max-width: 500px; border-radius: 15px; border: 2px solid var(--gold);
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.4); margin: 20px auto; display: block;
-            animation: gatherDustPhoto 4s ease-out forwards;
+        
+        /* Стил за видеото */
+        .video-container {
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto 60px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            background: #000;
         }
+        video { width: 100%; display: block; }
 
-        @keyframes gatherDust {
-            0% { opacity: 0; letter-spacing: 25px; filter: blur(20px); transform: scale(1.3); }
-            100% { opacity: 1; letter-spacing: 5px; filter: blur(0px); transform: scale(1); }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
         }
-
-        @keyframes gatherDustPhoto {
-            0% { opacity: 0; filter: blur(30px); transform: scale(0.8); }
-            100% { opacity: 1; filter: blur(0px); transform: scale(1); }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
-
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            transition: 0.4s;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: rgba(212, 175, 55, 0.05);
+        }
+        .card h2 { color: var(--primary); margin-bottom: 15px; font-size: 1.5rem; }
+        
+        footer {
+            text-align: center;
+            padding: 60px;
+            opacity: 0.4;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+        }
         @keyframes shine { to { background-position: 200% center; } }
-
-        .sub-title { color: var(--gold); letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 30px; opacity: 0.8; }
-
-        .main-photo { width: 90%; max-width: 500px; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.3); margin: 20px auto; display: block; }
-
-        .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 800px; margin: 30px auto; padding: 0 15px; }
-        .btn-gold {
-            padding: 12px 18px; background: transparent; color: var(--gold); border: 1px solid var(--gold);
-            text-decoration: none; border-radius: 5px; font-size: 0.75rem; text-transform: uppercase;
-            letter-spacing: 1px; transition: 0.3s; flex: 1 1 140px; max-width: 200px;
-        }
-        .btn-gold:hover { background: var(--gold); color: black; box-shadow: 0 0 15px var(--gold); }
-
-        .video-card-clean { background: var(--glass); padding: 10px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.1); margin: 25px auto; max-width: 800px; width: 90%; }
-        video { width: 100%; border-radius: 15px; background: #000; display: block; outline: none; }
-
-        .partners-section { margin: 80px auto; max-width: 900px; padding: 40px 20px; }
-        .partners-title { color: var(--gold); text-transform: uppercase; font-size: 1.2rem; letter-spacing: 4px; margin-bottom: 20px; opacity: 0.6; }
-        .partners-line { height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); width: 80%; margin: 0 auto; opacity: 0.3; }
-
-        .footer { margin-top: 50px; color: var(--gold); font-size: 0.7rem; opacity: 0.5; letter-spacing: 2px; }
     </style>
 </head>
 <body>
-
-    <h1 class="hero-name">Rosen Antonov</h1>
-    <div class="sub-title">Dramatic Tenor</div>
+    <div class="bg-glow"></div>
     
-    <img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png" alt="Gold Statue" class="animated-statue">
-    <img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png" alt="Limo" class="main-photo">
+    <header>
+        <p class="subtitle">ГЛАСЪТ • ЕПОХАТА • ИКОНАТА</p>
+        <h1>ROSEN ANTONOV</h1>
+    </header>
 
-    <div class="nav-container">
-        <a href="#" class="btn-gold">Галерия</a>
-        <a href="#" class="btn-gold">Live Streaming</a>
-        <a href="#" class="btn-gold">Performances</a>
-        <a href="#" class="btn-gold">News</a>
-        <a href="#" class="btn-gold">About</a>
-        <a href="#partners" class="btn-gold">Партньори</a>
-        <a href="https://www.facebook.com/share/1BcLUTBR9o/" target="_blank" class="btn-gold">Contacts</a>
-    </div>
-
-    <div class="video-card-clean">
-        <video controls playsinline preload="metadata">
-            <source src="FDownloader.Net_AQN_GbNG7R93pf46vNMLzZbz8tTQwWl9o8xbG0QFnJorZ_RF36xP8cY4gzMF90psmFfVvYeRb-S2PWPJtDxDLkMx6bZAIndfy5uvJd0YNw_360p_(SD).mp4" type="video/mp4">
-            Вашият браузър не поддържа видео.
+    <div class="video-container">
+        <video controls>
+            <source src="https://raw.githubusercontent.com/rosenantonov/rosenantonov.github.io/main/DELAILAH%20%20ROSEN%20ANTONOV%20%D0%A0%D0%9E%D0%A1%D0%95%D0%9D%20%D0%90%D0%9D%D0%A2%D0%9E%D0%9D%D0%9E%D0%92%20(1).mp4" type="video/mp4">
+            Вашият браузър не поддържа видео елемента.
         </video>
     </div>
 
-    <div class="video-card-clean">
-        <video controls playsinline preload="metadata">
-            <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w%20(1).mp4" type="video/mp4">
-            Вашият браузър не поддържа видео.
-        </video>
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <h2>💿 Дискография</h2>
+                <p>Пълен архив на музикалните шедьоври и албуми.</p>
+            </div>
+            <div class="card">
+                <h2>🎙️ История</h2>
+                <p>Пътят от първата сцена до световния връх.</p>
+            </div>
+            <div class="card">
+                <h2>📸 Галерия</h2>
+                <p>Ексклузивни кадри и моменти, уловени във времето.</p>
+            </div>
+        </div>
     </div>
 
-    <div class="video-card-clean">
-        <video controls playsinline preload="metadata">
-            <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w.mp4" type="video/mp4">
-            Вашият браузър не поддържа видео.
-        </video>
-    </div>
-
-    <div class="partners-section" id="partners">
-        <div class="partners-title">Партньори</div>
-        <div class="partners-line"></div>
-    </div>
-
-    <div class="footer">PROFESSIONAL PORTFOLIO &copy; 2026</div>
-
+    <footer>DESIGNED FOR THE FUTURE &copy; 2026 ROSEN ANTONOV ARCHIVE</footer>
 </body>
 </html>
+
