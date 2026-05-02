@@ -13,78 +13,69 @@
             margin: 0; 
             text-align: center; 
             padding-bottom: 50px;
+            overflow-x: hidden;
         }
+
+        /* АНИМИРАНО ЗАГЛАВИЕ "ЗЛАТЕН ПРАХ" */
         .hero-name { 
-            font-size: 2.5rem; 
+            font-size: 3rem; 
             text-transform: uppercase; 
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728); 
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fcf6ba, #bf953f);
+            background-size: 200% auto;
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
-            margin: 30px 0 10px 0; 
+            margin: 40px 0 10px 0; 
             font-weight: bold; 
-            letter-spacing: 3px; 
+            letter-spacing: 8px;
+            animation: gatherDust 3s ease-out forwards, shine 5s linear infinite;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
         }
+
+        @keyframes gatherDust {
+            0% {
+                opacity: 0;
+                letter-spacing: 25px;
+                filter: blur(20px) brightness(2);
+                transform: scale(1.2);
+            }
+            100% {
+                opacity: 1;
+                letter-spacing: 5px;
+                filter: blur(0px) brightness(1);
+                transform: scale(1);
+            }
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
         .sub-title {
             color: var(--gold);
             letter-spacing: 5px;
             text-transform: uppercase;
             font-size: 0.9rem;
             margin-bottom: 30px;
+            animation: fadeIn 4s ease-in;
         }
-        
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 0.8; } }
+
         .main-photo { 
-            width: 90%; 
-            max-width: 500px; 
-            border-radius: 15px; 
-            border: 2px solid var(--gold); 
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); 
-            margin: 20px auto;
-            display: block;
+            width: 90%; max-width: 500px; border-radius: 15px; border: 2px solid var(--gold); 
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); margin: 20px auto; display: block;
         }
 
-        .nav-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 0 15px;
-        }
+        .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 800px; margin: 30px auto; padding: 0 15px; }
         .btn-gold {
-            padding: 12px 18px;
-            background: transparent;
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            flex: 1 1 140px;
-            max-width: 200px;
+            padding: 12px 18px; background: transparent; color: var(--gold); border: 1px solid var(--gold);
+            text-decoration: none; border-radius: 5px; font-size: 0.75rem; text-transform: uppercase;
+            letter-spacing: 1px; transition: 0.3s; flex: 1 1 140px; max-width: 200px;
         }
-        .btn-gold:hover {
-            background: var(--gold);
-            color: black;
-            box-shadow: 0 0 15px var(--gold);
-        }
-        .btn-buy {
-            background: var(--gold);
-            color: black;
-            font-weight: bold;
-        }
+        .btn-gold:hover { background: var(--gold); color: black; box-shadow: 0 0 15px var(--gold); }
+        .btn-buy { background: var(--gold); color: black; font-weight: bold; }
 
-        .video-card { 
-            background: var(--glass); 
-            padding: 20px; 
-            border-radius: 20px; 
-            border: 1px solid rgba(212, 175, 55, 0.2); 
-            margin: 25px auto; 
-            max-width: 800px; 
-            width: 90%; 
-        }
+        .video-card { background: var(--glass); padding: 20px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 25px auto; max-width: 800px; width: 90%; }
         h2 { color: var(--gold); text-transform: uppercase; font-size: 1rem; margin-bottom: 15px; letter-spacing: 2px; }
         video { width: 100%; border-radius: 10px; background: #000; }
         
@@ -97,7 +88,6 @@
     <div class="sub-title">Dramatic Tenor</div>
     
     <img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png" alt="Limo" class="main-photo">
-    
     <img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png" alt="Gold Statue" class="main-photo">
 
     <div class="nav-container">
@@ -111,14 +101,14 @@
     </div>
 
     <div class="video-card">
-        <h2><span style="color:red">●</span> Live Performance - Мъглиж</h2>
+        <h2><span style="color:red">●</span> Live Performance I</h2>
         <video controls>
             <source src="FDownloader.Net_AQN_GbNG7R93pf46vNMLzZbz8tTQwWl9o8xbG0QFnJorZ_RF36xP8cY4gzMF90psmFfVvYeRb-S2PWPJtDxDLkMx6bZAIndfy5uvJd0YNw_360p_(SD).mp4" type="video/mp4">
         </video>
     </div>
 
     <div class="video-card">
-        <h2><span style="color:red">●</span> Коледен Спектакъл</h2>
+        <h2><span style="color:red">●</span> Live Performance II</h2>
         <video controls>
             <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w%20(1).mp4" type="video/mp4">
         </video>
