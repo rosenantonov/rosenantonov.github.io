@@ -39,20 +39,17 @@
         }
         .btn-gold:hover { background: var(--gold); color: black; box-shadow: 0 0 10px var(--gold); }
 
-        /* ВИДЕА */
+        /* ВИДЕА И СНИМКИ */
         .video-card { background: var(--glass); padding: 10px; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.1); margin: 20px auto; width: 90%; max-width: 800px; }
-        video { width: 100%; border-radius: 10px; display: block; }
+        video { width: 100%; border-radius: 10px; display: block; background: #000; }
+        .section-photo { width: 90%; max-width: 500px; border-radius: 15px; border: 1px solid var(--gold); margin: 25px auto; display: block; }
 
-        /* СНИМКИ */
-        .section-photo { width: 90%; max-width: 500px; border-radius: 15px; border: 1px solid var(--gold); margin: 20px auto; display: block; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
-
-        /* СЕКЦИИ КУПИ И ПАРТНЬОРИ */
+        /* СЕКЦИИ */
         .content-section { margin: 50px auto; padding: 30px 20px; border-top: 1px solid rgba(212, 175, 55, 0.2); max-width: 800px; }
         .section-title { color: var(--gold); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px; font-size: 1.2rem; }
-        
         .buy-box { border: 1px dashed var(--gold); padding: 20px; border-radius: 10px; background: rgba(212, 175, 55, 0.05); }
 
-        .footer { margin-top: 40px; color: var(--gold); font-size: 0.6rem; opacity: 0.5; letter-spacing: 2px; }
+        .footer { margin-top: 40px; color: var(--gold); font-size: 0.6rem; opacity: 0.5; }
     </style>
 </head>
 <body>
@@ -77,8 +74,62 @@
         <a href="https://www.facebook.com/share/1BcLUTBR9o/" target="_blank" class="btn-gold" id="nav-contacts">Contacts</a>
     </div>
 
-    <div class="video-card"><video controls playsinline><source src="video1.mp4" type="video/mp4"></video></div>
-    <div class="video-card"><video controls playsinline><source src="video2.mp4" type="video/mp4"></video></div>
-    <div class="video-card"><video controls playsinline><source src="video3.mp4" type="video/mp4"></video></div>
+    <div class="video-card">
+        <video controls playsinline>
+            <source src="video1.mp4" type="video/mp4">
+            <source src="video1.mp4.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="video-card">
+        <video controls playsinline>
+            <source src="video2.mp4" type="video/mp4">
+            <source src="video2.mp4.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="video-card">
+        <video controls playsinline>
+            <source src="video3.mp4" type="video/mp4">
+            <source src="video3.mp4.mp4" type="video/mp4">
+        </video>
+    </div>
 
-    <img src="Messenger_creation_C64CCDF5-
+    <img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png" alt="Statue" class="section-photo">
+    <img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png" alt="Limo" class="section-photo">
+
+    <div class="content-section" id="buy-section">
+        <div class="section-title" id="buyTitle">Купи</div>
+        <div class="buy-box">
+            <p style="font-size: 0.9rem; opacity: 0.7;">Coming Soon / Очаквайте скоро</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="section-title" id="partnersTitle">Партньори</div>
+        <div style="height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); width: 80%; margin: 0 auto; opacity: 0.3;"></div>
+    </div>
+
+    <div class="footer">PROFESSIONAL PORTFOLIO &copy; 2026</div>
+
+    <script>
+        const translations = {
+            bg: { sub: "Драматичен Тенор", gallery: "Галерия", live: "На Живо", perf: "Изпълнения", news: "Новини", about: "За мен", buy: "Купи", contacts: "Контакти", partners: "Партньори" },
+            en: { sub: "Dramatic Tenor", gallery: "Gallery", live: "Live Streaming", perf: "Performances", news: "News", about: "About", buy: "Buy", contacts: "Contacts", partners: "Partners" },
+            ru: { sub: "Драматический Тенор", gallery: "Галерея", live: "Прямой эфир", perf: "Выступления", news: "Новости", about: "Обо мне", buy: "Купить", contacts: "Контакты", partners: "Партнеры" },
+            zh: { sub: "戏剧男高音", gallery: "画廊", live: "现场直播", perf: "演出", news: "新闻", about: "关于我", buy: "购买", contacts: "联系方式", partners: "合作伙伴" }
+        };
+
+        function changeLang(lang) {
+            document.getElementById('subTitle').innerText = translations[lang].sub;
+            document.getElementById('nav-gallery').innerText = translations[lang].gallery;
+            document.getElementById('nav-live').innerText = translations[lang].live;
+            document.getElementById('nav-perf').innerText = translations[lang].perf;
+            document.getElementById('nav-news').innerText = translations[lang].news;
+            document.getElementById('nav-about').innerText = translations[lang].about;
+            document.getElementById('nav-buy').innerText = translations[lang].buy;
+            document.getElementById('nav-contacts').innerText = translations[lang].contacts;
+            document.getElementById('buyTitle').innerText = translations[lang].buy;
+            document.getElementById('partnersTitle').innerText = translations[lang].partners;
+        }
+    </script>
+</body>
+</html>
