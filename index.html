@@ -16,7 +16,7 @@
             overflow-x: hidden;
         }
 
-        /* АНИМАЦИЯ ЗЛАТЕН ПРАХ ЗА ИМЕТО */
+        /* АНИМАЦИЯ ЗЛАТЕН ПРАХ */
         .hero-name { 
             font-size: 3rem; 
             text-transform: uppercase; 
@@ -28,46 +28,29 @@
             font-weight: bold; 
             letter-spacing: 8px;
             animation: gatherDust 3.5s ease-out forwards, shine 5s linear infinite;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
         }
 
-        /* АНИМАЦИЯ ЗЛАТЕН ПРАХ ЗА СТАТУЯТА */
         .animated-statue {
-            width: 90%;
-            max-width: 500px;
-            border-radius: 15px;
-            border: 2px solid var(--gold);
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
-            margin: 20px auto;
-            display: block;
+            width: 90%; max-width: 500px; border-radius: 15px; border: 2px solid var(--gold);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.4); margin: 20px auto; display: block;
             animation: gatherDustPhoto 4s ease-out forwards;
         }
 
         @keyframes gatherDust {
-            0% { opacity: 0; letter-spacing: 25px; filter: blur(20px) brightness(3); transform: scale(1.3); }
-            100% { opacity: 1; letter-spacing: 5px; filter: blur(0px) brightness(1); transform: scale(1); }
+            0% { opacity: 0; letter-spacing: 25px; filter: blur(20px); transform: scale(1.3); }
+            100% { opacity: 1; letter-spacing: 5px; filter: blur(0px); transform: scale(1); }
         }
 
         @keyframes gatherDustPhoto {
-            0% { opacity: 0; filter: blur(30px) brightness(2) contrast(0.5); transform: scale(0.8) translateY(20px); }
-            100% { opacity: 1; filter: blur(0px) brightness(1) contrast(1); transform: scale(1) translateY(0); }
+            0% { opacity: 0; filter: blur(30px); transform: scale(0.8); }
+            100% { opacity: 1; filter: blur(0px); transform: scale(1); }
         }
 
         @keyframes shine { to { background-position: 200% center; } }
 
-        .sub-title {
-            color: var(--gold);
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-            opacity: 0.8;
-        }
+        .sub-title { color: var(--gold); letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 30px; opacity: 0.8; }
 
-        .main-photo { 
-            width: 90%; max-width: 500px; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.3); 
-            margin: 20px auto; display: block;
-        }
+        .main-photo { width: 90%; max-width: 500px; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.3); margin: 20px auto; display: block; }
 
         .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 800px; margin: 30px auto; padding: 0 15px; }
         .btn-gold {
@@ -76,18 +59,45 @@
             letter-spacing: 1px; transition: 0.3s; flex: 1 1 140px; max-width: 200px;
         }
         .btn-gold:hover { background: var(--gold); color: black; box-shadow: 0 0 15px var(--gold); }
-        .btn-buy { background: var(--gold); color: black; font-weight: bold; }
 
-        /* ВИДЕО КАРТИ БЕЗ ТЕКСТ */
-        .video-card-clean { 
-            background: var(--glass); 
-            padding: 10px; 
-            border-radius: 20px; 
-            border: 1px solid rgba(212, 175, 55, 0.2); 
-            margin: 25px auto; 
-            max-width: 800px; 
-            width: 90%; 
+        /* СЕКЦИЯ ПАРТНЬОРИ */
+        .partners-section {
+            margin: 60px auto;
+            max-width: 900px;
+            padding: 20px;
         }
+        .partners-title {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .partners-title::before, .partners-title::after {
+            content: ""; height: 1px; width: 50px; background: var(--gold); margin: 0 15px; opacity: 0.5;
+        }
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            opacity: 0.7;
+        }
+        .partner-logo {
+            font-size: 1.1rem;
+            color: white;
+            font-weight: 300;
+            letter-spacing: 2px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .video-card-clean { background: var(--glass); padding: 10px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 25px auto; max-width: 800px; width: 90%; }
         video { width: 100%; border-radius: 15px; background: #000; display: block; }
         
         .footer { margin-top: 50px; color: var(--gold); font-size: 0.7rem; opacity: 0.5; letter-spacing: 2px; }
@@ -108,7 +118,6 @@
         <a href="#" class="btn-gold">News</a>
         <a href="#" class="btn-gold">About</a>
         <a href="#" class="btn-gold">Contacts</a>
-        <a href="#" class="btn-gold btn-buy">Купи Билети / Албум</a>
     </div>
 
     <div class="video-card-clean">
@@ -116,17 +125,24 @@
             <source src="FDownloader.Net_AQN_GbNG7R93pf46vNMLzZbz8tTQwWl9o8xbG0QFnJorZ_RF36xP8cY4gzMF90psmFfVvYeRb-S2PWPJtDxDLkMx6bZAIndfy5uvJd0YNw_360p_(SD).mp4" type="video/mp4">
         </video>
     </div>
-
     <div class="video-card-clean">
         <video controls>
             <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w%20(1).mp4" type="video/mp4">
         </video>
     </div>
-
     <div class="video-card-clean">
         <video controls>
             <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w.mp4" type="video/mp4">
         </video>
+    </div>
+
+    <div class="partners-section">
+        <div class="partners-title">Партньори</div>
+        <div class="partners-grid">
+            <div class="partner-logo">ОПЕРА СТАРА ЗАГОРА</div>
+            <div class="partner-logo">ФЕСТИВАЛ МЪГЛИЖ</div>
+            <div class="partner-logo">MUSIC WORLD</div>
+            </div>
     </div>
 
     <div class="footer">PROFESSIONAL PORTFOLIO &copy; 2026</div>
