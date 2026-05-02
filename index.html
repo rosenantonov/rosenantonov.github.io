@@ -6,44 +6,109 @@
     <title>ROSEN ANTONOV | DRAMATIC TENOR</title>
     <style>
         :root { --gold: #d4af37; --dark: #0a0a0a; }
-        body { background-color: var(--dark); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; text-align: center; }
-        .hero-name { font-size: 2.5rem; text-transform: uppercase; background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 20px 0; font-weight: bold; }
+        body { 
+            background-color: var(--dark); 
+            color: white; 
+            font-family: 'Segoe UI', sans-serif; 
+            margin: 0; 
+            text-align: center; 
+            padding-bottom: 50px;
+        }
+        .hero-name { 
+            font-size: 2.5rem; 
+            text-transform: uppercase; 
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            margin: 30px 0 10px 0; 
+            font-weight: bold; 
+            letter-spacing: 3px; 
+        }
+        .sub-title {
+            color: var(--gold);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
         
-        .photo-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 10px; }
-        .main-photo { width: 90%; max-width: 450px; border-radius: 15px; border: 2px solid var(--gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .main-photo { 
+            width: 90%; 
+            max-width: 550px; 
+            border-radius: 15px; 
+            border: 2px solid var(--gold); 
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); 
+        }
         
-        .video-card { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 20px auto; max-width: 800px; width: 92%; }
-        h2 { color: var(--gold); text-transform: uppercase; font-size: 1.1rem; margin-bottom: 15px; letter-spacing: 1px; }
-        video { width: 100%; border-radius: 10px; background: #000; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .video-card { 
+            background: rgba(255,255,255,0.03); 
+            padding: 20px; 
+            border-radius: 25px; 
+            border: 1px solid rgba(212, 175, 55, 0.15); 
+            margin: 25px auto; 
+            max-width: 800px; 
+            width: 90%; 
+        }
+        h2 { 
+            color: var(--gold); 
+            text-transform: uppercase; 
+            font-size: 1rem; 
+            margin-bottom: 20px; 
+            letter-spacing: 2px; 
+        }
+        video { 
+            width: 100%; 
+            border-radius: 15px; 
+            background: #000; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.6); 
+        }
         
-        .footer { padding: 40px; color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; opacity: 0.7; }
+        .footer { 
+            margin-top: 50px;
+            padding: 20px; 
+            color: var(--gold); 
+            font-size: 0.7rem; 
+            letter-spacing: 2px; 
+            opacity: 0.5; 
+        }
     </style>
 </head>
 <body>
 
     <h1 class="hero-name">Rosen Antonov</h1>
+    <div class="sub-title">Dramatic Tenor</div>
     
-    <div class="photo-container">
-        <img src="1000000085.png" alt="Rosen Antonov Gold" class="main-photo">
-        <img src="Screenshot_20260329-163207.png" alt="Rosen Antonov News" class="main-photo">
+    <div class="gallery">
+        <img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png" alt="Rosen Antonov Limo" class="main-photo">
+        
+        <img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png" alt="Rosen Antonov Gold" class="main-photo">
     </div>
 
     <div class="video-card">
-        <h2><span style="color:red">●</span> Live Performance 1</h2>
+        <h2><span style="color:red; font-size: 0.8rem;">●</span> Live Performance I</h2>
         <video controls>
             <source src="FDownloader.Net_AQN_GbNG7R93pf46vNMLzZbz8tTQwWl9o8xbG0QFnJorZ_RF36xP8cY4gzMF90psmFfVvYeRb-S2PWPJtDxDLkMx6bZAIndfy5uvJd0YNw_360p_(SD).mp4" type="video/mp4">
         </video>
     </div>
 
     <div class="video-card">
-        <h2><span style="color:red">●</span> Live Performance 2</h2>
+        <h2><span style="color:red; font-size: 0.8rem;">●</span> Live Performance II</h2>
         <video controls>
             <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w%20(1).mp4" type="video/mp4">
         </video>
     </div>
 
     <div class="footer">
-        DRAMATIC TENOR PORTFOLIO &copy; 2026
+        PROFESSIONAL PORTFOLIO &copy; 2026
     </div>
 
 </body>
