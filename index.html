@@ -5,103 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROSEN ANTONOV | DRAMATIC TENOR</title>
     <style>
-        :root {
-            --gold: #d4af37;
-            --dark: #0a0a0a;
-            --glass: rgba(255, 255, 255, 0.05);
-        }
-
-        body {
-            background-color: var(--dark);
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            text-align: center;
-        }
-
-        /* Ефект на златния прах за заглавието */
-        .hero-name {
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 20px 0;
-            letter-spacing: 3px;
-            font-weight: bold;
-        }
-
-        .main-photo {
-            width: 90%;
-            max-width: 500px;
-            border-radius: 15px;
-            border: 2px solid var(--gold);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-            margin-bottom: 30px;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        .video-card {
-            background: var(--glass);
-            padding: 15px;
-            border-radius: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            margin: 20px auto;
-            max-width: 800px;
-        }
-
-        h2 { color: var(--gold); text-transform: uppercase; font-size: 1.2rem; }
-
-        video {
-            width: 100%;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-
-        .btn-gold {
-            display: inline-block;
-            padding: 10px 25px;
-            background: transparent;
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            text-decoration: none;
-            border-radius: 50px;
-            margin: 10px;
-            transition: 0.3s;
-        }
-
-        .btn-gold:hover {
-            background: var(--gold);
-            color: black;
-        }
+        :root { --gold: #d4af37; --dark: #0a0a0a; }
+        body { background-color: var(--dark); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; text-align: center; }
+        .hero-name { font-size: 2.5rem; text-transform: uppercase; background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 20px 0; font-weight: bold; }
+        
+        .photo-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 10px; }
+        .main-photo { width: 90%; max-width: 450px; border-radius: 15px; border: 2px solid var(--gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+        
+        .video-card { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 20px auto; max-width: 800px; width: 92%; }
+        h2 { color: var(--gold); text-transform: uppercase; font-size: 1.1rem; margin-bottom: 15px; letter-spacing: 1px; }
+        video { width: 100%; border-radius: 10px; background: #000; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        
+        .footer { padding: 40px; color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; opacity: 0.7; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1 class="hero-name">Rosen Antonov</h1>
-        
+    <h1 class="hero-name">Rosen Antonov</h1>
+    
+    <div class="photo-container">
         <img src="1000000085.png" alt="Rosen Antonov Gold" class="main-photo">
+        <img src="Screenshot_20260329-163207.png" alt="Rosen Antonov News" class="main-photo">
+    </div>
 
-        <div class="video-card">
-            <h2><span style="color:red">●</span> Live Performance</h2>
-            <video controls>
-                <source src="FDownloader.Net_AQN_GbNG7R93pf46vNMLzZbz8tTQwWl9o8xbG0QFnJorZ_RF36xP8cY4gzMF90psmFfVvYeRb-S2PWPJtDxDLkMx6bZAIndfy5uvJd0YNw_360p_(SD).mp4" type="video/mp4">
-                Браузърът ви не поддържа видео.
-            </video>
-        </div>
+    <div class="video-card">
+        <h2><span style="color:red">●</span> Live Performance 1</h2>
+        <video controls>
+            <source src="FDownloader.Net_AQN_GbNG7R93pf46vNMLzZbz8tTQwWl9o8xbG0QFnJorZ_RF36xP8cY4gzMF90psmFfVvYeRb-S2PWPJtDxDLkMx6bZAIndfy5uvJd0YNw_360p_(SD).mp4" type="video/mp4">
+        </video>
+    </div>
 
-        <div class="video-card">
-            <h2>Галерия и Аудио</h2>
-            <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-                <a href="#" class="btn-gold">Галерия</a>
-                <a href="#" class="btn-gold">Аудио</a>
-                <a href="#" class="btn-gold">Live Stream</a>
-            </div>
-        </div>
+    <div class="video-card">
+        <h2><span style="color:red">●</span> Live Performance 2</h2>
+        <video controls>
+            <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w%20(1).mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="footer">
+        DRAMATIC TENOR PORTFOLIO &copy; 2026
     </div>
 
 </body>
