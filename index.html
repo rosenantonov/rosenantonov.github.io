@@ -24,12 +24,12 @@
             font-size: 2.5rem; text-transform: uppercase; 
             background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fcf6ba, #bf953f);
             background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
-            margin: 50px 0 10px 0; font-weight: bold; letter-spacing: 5px;
+            margin: 60px 0 10px 0; font-weight: bold; letter-spacing: 5px;
             animation: shine 5s linear infinite;
         }
         @keyframes shine { to { background-position: 200% center; } }
 
-        .sub-title { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 20px; }
+        .sub-title { color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 20px; opacity: 0.9; }
 
         /* НАВИГАЦИЯ */
         .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 900px; margin: 20px auto; padding: 0 10px; }
@@ -85,7 +85,7 @@
     <div class="content-section" id="buy-section">
         <div class="section-title" id="buyTitle">Купи</div>
         <div class="buy-box">
-            <p style="font-size: 0.9rem; opacity: 0.7;">Coming Soon / Очаквайте скоро</p>
+            <p id="buyText">Coming Soon / Очаквайте скоро</p>
         </div>
     </div>
 
@@ -98,10 +98,10 @@
 
     <script>
         const translations = {
-            bg: { sub: "Драматичен Тенор", gallery: "Галерия", live: "На Живо", perf: "Изпълнения", news: "Новини", about: "За мен", buy: "Купи", contacts: "Контакти", partners: "Партньори" },
-            en: { sub: "Dramatic Tenor", gallery: "Gallery", live: "Live Streaming", perf: "Performances", news: "News", about: "About", buy: "Buy", contacts: "Contacts", partners: "Partners" },
-            ru: { sub: "Драматический Тенор", gallery: "Галерея", live: "Прямой эфир", perf: "Выступления", news: "Новости", about: "Обо мне", buy: "Купить", contacts: "Контакты", partners: "Партнеры" },
-            zh: { sub: "戏剧男高音", gallery: "画廊", live: "现场直播", perf: "演出", news: "新闻", about: "关于我", buy: "购买", contacts: "联系方式", partners: "合作伙伴" }
+            bg: { sub: "Драматичен Тенор", gallery: "Галерия", live: "На Живо", perf: "Изпълнения", news: "Новини", about: "За мен", buy: "Купи", buyText: "Очаквайте скоро", contacts: "Контакти", partners: "Партньори" },
+            en: { sub: "Dramatic Tenor", gallery: "Gallery", live: "Live Streaming", perf: "Performances", news: "News", about: "About", buy: "Buy", buyText: "Coming Soon", contacts: "Contacts", partners: "Partners" },
+            ru: { sub: "Драматический Тенор", gallery: "Галерея", live: "Прямой эфир", perf: "Выступления", news: "Новости", about: "Обо мне", buy: "Купить", buyText: "Скоро будет", contacts: "Контакты", partners: "Партнеры" },
+            zh: { sub: "戏剧男高音", gallery: "画廊", live: "现场直播", perf: "演出", news: "新闻", about: "关于我", buy: "购买", buyText: "敬请期待", contacts: "联系方式", partners: "合作伙伴" }
         };
 
         function changeLang(lang) {
@@ -114,6 +114,7 @@
             document.getElementById('nav-buy').innerText = translations[lang].buy;
             document.getElementById('nav-contacts').innerText = translations[lang].contacts;
             document.getElementById('buyTitle').innerText = translations[lang].buy;
+            document.getElementById('buyText').innerText = translations[lang].buyText;
             document.getElementById('partnersTitle').innerText = translations[lang].partners;
         }
     </script>
