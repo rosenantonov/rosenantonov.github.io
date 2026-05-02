@@ -8,11 +8,12 @@
         body { background: #0a0a0a; color: white; font-family: sans-serif; text-align: center; margin: 0; padding-bottom: 50px; }
         .gold { color: #d4af37; }
         .lang-switch { margin: 20px; display: flex; justify-content: center; gap: 10px; }
-        .l-btn { background: none; border: 1px solid #d4af37; color: #d4af37; padding: 8px 15px; cursor: pointer; border-radius: 5px; }
+        .l-btn { background: none; border: 1px solid #d4af37; color: #d4af37; padding: 8px 15px; cursor: pointer; border-radius: 5px; text-transform: uppercase; }
         .name { font-size: 2.2rem; text-transform: uppercase; color: #d4af37; margin-top: 20px; letter-spacing: 2px; }
+        .sub-title { color: #d4af37; font-size: 1rem; margin-bottom: 20px; opacity: 0.8; text-transform: uppercase; }
         .nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 20px; }
-        .btn { padding: 12px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; font-size: 13px; min-width: 100px; text-transform: uppercase; }
-        .card { width: 90%; max-width: 700px; margin: 20px auto; background: #111; padding: 10px; border-radius: 10px; border: 1px solid #333; }
+        .btn { padding: 12px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; font-size: 13px; min-width: 100px; text-transform: uppercase; border-radius: 5px; }
+        .card { width: 90%; max-width: 700px; margin: 20px auto; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 10px; border: 1px solid #333; }
         video, img { width: 100%; border-radius: 5px; display: block; }
         .section { border-top: 1px solid #d4af37; margin-top: 40px; padding: 20px; max-width: 700px; margin-left: auto; margin-right: auto; }
     </style>
@@ -25,10 +26,35 @@
     </div>
 
     <h1 class="name">Rosen Antonov</h1>
-    <p id="sub" class="gold">Драматичен Тенор</p>
+    <div id="sub" class="sub-title">Драматичен Тенор</div>
 
     <div class="nav">
         <a href="#" class="btn" id="m1">Галерия</a>
         <a href="#" class="btn" id="m2">На Живо</a>
         <a href="#buy" class="btn" id="m3">Купи</a>
-        <a href="https://www.facebook.
+        <a href="https://www.facebook.com/share/1BcLUTBR9o/" target="_blank" class="btn">Facebook</a>
+    </div>
+
+    <div class="card"><video controls playsinline><source src="Video1.mp4" type="video/mp4"></video></div>
+    <div class="card"><video controls playsinline><source src="Video2.mp4" type="video/mp4"></video></div>
+    <div class="card"><video controls playsinline><source src="Video3.mp4" type="video/mp4"></video></div>
+
+    <div class="card"><img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png"></div>
+    <div class="card"><img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png"></div>
+
+    <div class="section" id="buy">
+        <h2 id="t1" class="gold">КУПИ</h2>
+        <p id="t2">Очаквайте скоро</p>
+    </div>
+
+    <div class="section">
+        <h2 id="t3" class="gold">ПАРТНЬОРИ</h2>
+    </div>
+
+    <script>
+        const dict = {
+            bg: { s: "Драматичен Тенор", m1: "Галерия", m2: "На Живо", m3: "Купи", t1: "КУПИ", t2: "Очаквайте скоро", t3: "ПАРТНЬОРИ" },
+            en: { s: "Dramatic Tenor", m1: "Gallery", m2: "Live Streaming", m3: "Buy", t1: "BUY", t2: "Coming Soon", t3: "PARTNERS" }
+        };
+        function setL(l) {
+            document.getElementById
