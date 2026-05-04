@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROSEN ANTONOV | DRAMATIC TENOR</title>
+    <title>ROSEN ANTONOV | HIGH-TECH TENOR</title>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -16,127 +16,88 @@
             font-family: 'Orbitron', sans-serif; 
             text-align: center; 
             margin: 0; 
-            padding-bottom: 50px;
             overflow-x: hidden;
         }
 
-        /* ЧЕРЕН ФОН СЪС ЗЛАТНИ ЧАСТИЦИ */
+        /* КОНТЕЙНЕР ЗА ЧАСТИЦИТЕ (ЗЛАТЕН ПРАХ) */
         #particles-js {
             position: fixed;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            z-index: -1; /* Стои зад всичко */
             top: 0; left: 0;
         }
 
         .gold { color: #d4af37; text-shadow: 0 0 15px rgba(212, 175, 55, 0.7); }
 
-        /* АНИМАЦИЯ: ЗЛАТЕН ПРАХ ЗА ИМЕТО */
-        .dust-name { 
-            font-size: 2.5rem; 
-            text-transform: uppercase; 
-            color: #d4af37; 
-            margin: 100px 0 5px 0; 
-            letter-spacing: 5px; 
-            display: inline-block; 
-        }
-        .dust-name span { 
-            opacity: 0; 
-            display: inline-block;
-            animation: dustAssemble 1.5s forwards; 
-        }
-        @keyframes dustAssemble {
-            0% { opacity: 0; transform: scale(4) rotate(30deg); filter: blur(15px); }
-            100% { opacity: 1; transform: scale(1) rotate(0deg); filter: blur(0px); text-shadow: 0 0 20px #d4af37; }
+        /* ИМЕ С ГЛИЧ ЕФЕКТ */
+        .hero-name {
+            font-size: 3rem;
+            margin-top: 100px;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            color: #d4af37;
         }
 
-        .sub-title { 
-            color: rgba(212, 175, 55, 0.8); 
-            font-size: 0.9rem; 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-            margin-bottom: 30px;
+        .sub-title {
+            font-size: 1rem;
+            letter-spacing: 4px;
+            margin-bottom: 50px;
+            opacity: 0.8;
         }
 
-        /* АНИМАЦИЯ: ОГНЕНО ПОЯВЯВАНЕ НА СНИМКИТЕ */
-        .fire-photo-container { 
-            position: relative; 
-            width: 90%; 
-            max-width: 450px; 
-            margin: 0 auto 30px auto; 
+        /* ТЕХНОЛОГИЧНИ КАРТИ */
+        .card {
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(10px); /* Стъклен ефект */
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+            transition: 0.5s;
         }
-        .fire-core { 
-            position: absolute; 
-            top: 50%; left: 50%; 
-            transform: translate(-50%, -50%) scale(0); 
-            width: 120px; height: 120px; 
-            background: radial-gradient(circle, #fff, #ffda44, #ff8c00, #ff4500, transparent 70%); 
-            border-radius: 50%; 
-            filter: blur(15px); 
-            animation: fireBirth 2s 1s ease-out forwards; 
-            z-index: 1; 
-        }
-        .fire-img-box { 
-            width: 100%; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            opacity: 0; 
-            transform: scale(0.5) rotateY(90deg); 
-            animation: photoFromFire 2s 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; 
-            position: relative; 
-            z-index: 2; 
-            margin-bottom: 20px; 
-            border: 1px solid #d4af37;
-        }
-        .fire-img-box img { width: 100%; display: block; }
-        .img-box-2 { animation-delay: 2s; }
-
-        @keyframes fireBirth {
-            0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
-            50% { transform: translate(-50%, -50%) scale(3.5); opacity: 0.9; }
-            100% { transform: translate(-50%, -50%) scale(5); opacity: 0; }
-        }
-        @keyframes photoFromFire {
-            0% { opacity: 0; transform: scale(0.5) rotateY(90deg); filter: brightness(3); }
-            100% { opacity: 1; transform: scale(1) rotateY(0deg); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+        .card:hover {
+            border-color: #d4af37;
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
+            transform: translateY(-10px);
         }
 
-        /* МЕНЮ */
+        video { width: 100%; border-radius: 15px; }
+
         .nav {
-            position: sticky; top: 0;
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            background: rgba(0,0,0,0.8);
             padding: 15px;
             z-index: 100;
-            display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
+
         .btn {
-            padding: 10px 15px;
+            padding: 10px 20px;
             border: 1px solid #d4af37;
             color: #d4af37;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 12px;
-            font-weight: bold;
             border-radius: 5px;
             transition: 0.3s;
         }
-        .btn:hover { background: #d4af37; color: #000; box-shadow: 0 0 15px #d4af37; }
+        .btn:hover { background: #d4af37; color: black; box-shadow: 0 0 20px #d4af37; }
 
-        /* КАРТИ ЗА ВИДЕО */
-        .card {
-            width: 90%; max-width: 750px;
-            margin: 25px auto;
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            border-radius: 15px;
-            padding: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        .fire-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            border: 2px solid #d4af37;
+            margin-bottom: 40px;
         }
-        video { width: 100%; border-radius: 10px; display: block; background: #000; }
-
-        .section { border-top: 1px solid rgba(212, 175, 55, 0.3); margin: 50px auto; padding: 30px; max-width: 750px; }
     </style>
 </head>
 <body>
@@ -144,70 +105,43 @@
     <div id="particles-js"></div>
 
     <nav class="nav">
-        <a href="#video-section" class="btn">Видео</a>
-        <a href="#" class="btn">Галерия</a>
-        <a href="#" class="btn">Live Streaming</a>
+        <a href="#video" class="btn">Video</a>
         <a href="#buy" class="btn">Купи</a>
-        <a href="#partners" class="btn">Партньори</a>
         <a href="https://www.facebook.com/share/1BcLUTBR9o/" target="_blank" class="btn">Facebook</a>
     </nav>
 
-    <h1 class="dust-name">
-        <span>R</span><span>o</span><span>s</span><span>e</span><span>n</span> <span>A</span><span>n</span><span>t</span><span>o</span><span>n</span><span>o</span><span>v</span>
-    </h1>
-    <p class="sub-title gold">Dramatic Tenor</p>
+    <h1 class="hero-name" data-aos="zoom-in">Rosen Antonov</h1>
+    <p class="sub-title gold" data-aos="fade-up" data-aos-delay="300">Dramatic Tenor</p>
 
-    <div class="fire-photo-container">
-        <div class="fire-core"></div>
-        <div class="fire-img-box">
-            <img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png" alt="Rosen 1">
-        </div>
-        <div class="fire-img-box img-box-2">
-            <img src="Messenger_creation_D203DD09-6636-495B-A897-813892527065.png" alt="Rosen 2">
-        </div>
+    <div data-aos="flip-left" data-aos-duration="1500">
+        <img src="Messenger_creation_C64CCDF5-691E-4660-8E46-8EA59F954DC8.png" class="fire-img">
     </div>
 
-    <div id="video-section" class="card" data-aos="fade-up">
-        <video controls playsinline><source src="Video1.mp4" type="video/mp4"></video>
+    <div id="video" class="card" data-aos="fade-right">
+        <h3 class="gold">Performance I</h3>
+        <video controls><source src="Video1.mp4" type="video/mp4"></video>
     </div>
 
-    <div class="card" data-aos="fade-up">
-        <video controls playsinline>
-            <source src="FDownloader.Net_AQN_GbNG7R93pf46vNMLzZbz8tTQwWl9o8xbG0QFnJorZ_RF36xP8cY4gzMF90psmFfVvYeRb-S2PWPJtDxDLkMx6bZAIndfy5uvJd0YNw_360p_(SD).mp4" type="video/mp4">
-        </video>
+    <div class="card" data-aos="fade-left">
+        <h3 class="gold">Performance II</h3>
+        <video controls><source src="FDownloader.Net_AQN_GbNG7R93pf46vNMLzZbz8tTQwWl9o8xbG0QFnJorZ_RF36xP8cY4gzMF90psmFfVvYeRb-S2PWPJtDxDLkMx6bZAIndfy5uvJd0YNw_360p_(SD).mp4" type="video/mp4"></video>
     </div>
 
-    <div class="card" data-aos="fade-up">
-        <video controls playsinline>
-            <source src="Video3.mp4" type="video/mp4">
-            <source src="AQMwskVj_paCIX405hhBqUVoQIGWnq_gdIoDMpR0glwKjDmQU5DxelzC15kOMqrkwyYQESD9hC1rFqbJX-mft42lNv179_hbLeqF1xghmmKf9w%20(1).mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <div id="buy" class="section" data-aos="zoom-in">
-        <h2 class="gold">КУПИ</h2>
-        <p>Очаквайте скоро</p>
-    </div>
-
-    <div id="partners" class="section" data-aos="fade-up">
-        <h2 class="gold">ПАРТНЬОРИ</h2>
+    <div id="buy" class="card" data-aos="zoom-in-up">
+        <h2 class="gold">Очаквайте скоро</h2>
+        <p>Динамични билети и записи</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
     <script>
-        AOS.init({ duration: 1000, once: true });
+        // Активиране на анимациите при скрол
+        AOS.init();
 
-        // Анимация за името
-        document.querySelectorAll('.dust-name span').forEach((span, index) => {
-            span.style.animationDelay = `${index * 0.1}s`;
-        });
-
-        // Конфигурация на фона (старата динамика)
+        // Конфигурация на златния прах
         particlesJS("particles-js", {
             "particles": {
-                "number": { "value": 70 },
+                "number": { "value": 80 },
                 "color": { "value": "#d4af37" },
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.5 },
